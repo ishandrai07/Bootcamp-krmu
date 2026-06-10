@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Welcome To KRMU</h1>
+    <button onclick="handleclick()">CLICK</button>
+
+    <div>
+        <h1 class="h2">heading 2</h1>
+        <button onclick="hclick()">click</button>
+    </div>
+
+    <script>
+        function handleclick(){
+        const heading = document.querySelector("h1")
+        heading.textContent="Welcome to Bootcamp";
+        heading.style.backgroundColor="red";
+        }
+
+        function hclick(){
+            const heading2 = document.querySelector(".h2");
+            heading2.textContent="heading3";
+        }
+    </script>
+
+</body>
+</html>
