@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* ── Theme Variables ───────────────────────── */
+:root {
+  --bg: #f1f5f9;
+  --text: #0f172a;
+  --glass-bg: rgba(15, 23, 42, 0.06);
+  --glass-border: rgba(15, 23, 42, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+html.dark {
+  --bg: #020617;
+  --text: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ── Base ──────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Glassmorphism ─────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ── Gradient Text ─────────────────────────── */
+.gradient-text {
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;  /* older Safari / Chrome */
+  background-clip: text;          /* modern standard */
+  -webkit-text-fill-color: transparent;
+  color: transparent;             /* fallback for non-webkit */
+}
