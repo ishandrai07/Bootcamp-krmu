@@ -1,0 +1,51 @@
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  /* Primary & Accent colors */
+  --primary-color: #10b981; /* Emerald */
+  --primary-hover: #059669;
+  --primary-light: rgba(16, 185, 129, 0.1);
+  --accent-color: #06b6d4; /* Cyan */
+  
+  /* Background gradients */
+  --gradient-panel-start: #0f172a; /* Slate 900 */
+  --gradient-panel-end: #022c22; /* Dark Emerald */
+  
+  /* Left panel text and circles colors */
+  --panel-text-color: #ffffff;
+  --panel-subtext-color: rgba(241, 245, 249, 0.7);
+  --panel-circle-border: rgba(16, 185, 129, 0.2);
+  --panel-circle-bg-2: rgba(16, 185, 129, 0.04);
+  --panel-circle-bg-3: rgba(16, 185, 129, 0.08);
+
+  /* Page layout */
+  --bg-page-dark: #090d16;
+  --bg-page-light: #f8fafc;
+  
+  /* Form panel styling */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-focus: #10b981;
+  --bg-input: #f1f5f9;
+  
+  /* Button gradient */
+  --btn-gradient-start: #0ea5e9;
+  --btn-gradient-middle: #10b981;
+  --btn-gradient-end: #0ea5e9;
+  --btn-shadow: rgba(16, 185, 129, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family);
+  background: var(--bg-page-dark);
+}
