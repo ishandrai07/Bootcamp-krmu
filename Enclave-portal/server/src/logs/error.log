@@ -1,0 +1,4 @@
+2026-07-03 14:52:41 [ERROR] MongoDB Connection Failed : querySrv ECONNREFUSED _mongodb._tcp.cluster0.ip4vran.mongodb.net
+2026-07-03 15:00:50 [ERROR] MongoDB Connection Failed : querySrv ECONNREFUSED _mongodb._tcp.cluster0.ip4vran.mongodb.net
+2026-07-03 15:03:04 [ERROR] MongoDB Connection Failed : querySrv ECONNREFUSED _mongodb._tcp.cluster0.ip4vran.mongodb.net
+2026-07-03 15:31:00 [ERROR] MongoDB Connection Failed : querySrv ECONNREFUSED _mongodb._tcp.cluster0.ip4vran.mongodb.net
