@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+/* =========================================
+   SKEUOMORPHIC AI CHATBOT — DESIGN SYSTEM
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- Body & Leather Background ---------- */
+body {
+  margin: 0;
+  font-family: 'Merriweather', Georgia, serif;
+  background-color: #2c1a0e;
+  /* Leather texture via repeating gradients */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.04) 2px,
+      rgba(0,0,0,0.04) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.02) 2px,
+      rgba(255,255,255,0.02) 4px
+    ),
+    radial-gradient(ellipse at 30% 20%, #4a2c10 0%, #2c1a0e 60%, #1a0e06 100%);
+  color: #2c1a0e;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(180, 120, 50, 0.25) 0%, transparent 70%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 18px,
+      rgba(0,0,0,0.06) 18px,
+      rgba(0,0,0,0.06) 19px
+    );
+  position: relative;
+}
+
+/* Decorative stitched border around the whole page */
+.hero::before {
+  content: '';
+  position: fixed;
+  inset: 12px;
+  border: 2px dashed rgba(180, 140, 60, 0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.hero h1 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #f0d080;
+  text-shadow:
+    0 1px 0 #8b6914,
+    0 2px 4px rgba(0,0,0,0.6),
+    0 0 30px rgba(240, 200, 80, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.hero-subtitle {
+  color: #c4a96a;
+  margin-bottom: 48px;
+  max-width: 480px;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.7;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ---------- Hero Chat Box (Physical Device Feel) ---------- */
+.hero-chat-box {
+  width: 300px;
+  padding: 36px 28px;
+  border-radius: 18px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  /* Aged bronze / gold metal look */
+  background: linear-gradient(160deg,
+    #c8a84b 0%,
+    #e6c96a 15%,
+    #b8952a 35%,
+    #d4aa45 50%,
+    #a07820 65%,
+    #c8a84b 80%,
+    #8b6010 100%
+  );
+
+  /* Outer raised edge (embossed) */
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,        /* top highlight */
+    0 -1px 0 rgba(0,0,0,0.4) inset,              /* bottom shadow */
+    1px 0 0 rgba(255,255,255,0.3) inset,         /* left highlight */
+    -1px 0 0 rgba(0,0,0,0.3) inset,              /* right shadow */
+    0 8px 0 #7a5010,                              /* bottom ledge */
+    0 10px 20px rgba(0,0,0,0.6),                 /* ambient shadow */
+    0 2px 4px rgba(0,0,0,0.4);
+
+  border: 1px solid #7a5010;
+}
+
+.hero-chat-box::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  pointer-events: none;
+}
+
+/* Gloss sheen */
+.hero-chat-box::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  right: 4px;
+  height: 45%;
+  border-radius: 14px 14px 60% 60%;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.05)
+  );
+  pointer-events: none;
+}
+
+.hero-chat-box:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    1px 0 0 rgba(255,255,255,0.3) inset,
+    -1px 0 0 rgba(0,0,0,0.3) inset,
+    0 11px 0 #7a5010,
+    0 14px 28px rgba(0,0,0,0.7),
+    0 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-chat-box:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.3) inset,
+    0 -1px 0 rgba(255,255,255,0.2) inset,
+    0 3px 0 #7a5010,
+    0 4px 8px rgba(0,0,0,0.5);
+}
+
+.hero-chat-icon {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.hero-chat-box h2 {
+  margin: 10px 0 6px;
+  font-size: 1.2rem;
+  font-family: 'Merriweather', Georgia, serif;
+  color: #2c1500;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.3),
+    0 -1px 0 rgba(0,0,0,0.3);
+}
+
+.hero-chat-box p {
+  color: #4a2e00;
+  font-size: 0.82rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ================================================
+   CHAT WINDOW — Physical Device / Leather Journal
+   ================================================ */
+.chat-window {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 370px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* Device shell — dark brushed metal */
+  background: linear-gradient(160deg, #3a3a3a 0%, #282828 40%, #1e1e1e 100%);
+  border: 1px solid #555;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08) inset,     /* top rim highlight */
+    0 0 0 3px #111 inset,                         /* inner dark frame */
+    0 0 0 4px rgba(255,255,255,0.05) inset,       /* subtle border ring */
+    0 24px 60px rgba(0,0,0,0.8),
+    0 6px 20px rgba(0,0,0,0.6),
+    4px 4px 0 #0a0a0a;                            /* device ledge */
+}
+
+/* Screw detail top-left corner */
+.chat-window::before {
+  content: '◉';
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 8px;
+  color: rgba(255,255,255,0.25);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Screw detail top-right corner */
+.chat-window::after {
+  content: '◉';
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 8px;
+  color: rgba(255,255,255,0.25);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ---------- Chat Header — Glossy Metal Bar ---------- */
+.chat-header {
+  padding: 14px 20px 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  position: relative;
+  flex-shrink: 0;
+
+  /* Glossy metal gradient */
+  background: linear-gradient(180deg,
+    #b8852a 0%,
+    #d4a030 25%,
+    #c89025 50%,
+    #a07020 75%,
+    #8b6010 100%
+  );
+
+  color: #fff8e8;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5), 0 -1px 0 rgba(255,255,255,0.2);
+
+  border-bottom: 2px solid #5a3800;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.35) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* Header gloss sheen */
+.chat-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.0)
+  );
+  pointer-events: none;
+}
+
+/* Status dot */
+.chat-header span::before {
+  content: '● ';
+  color: #5dde5d;
+  font-size: 0.6rem;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 3px #5dde5d);
+}
+
+/* ---------- Close Button — Embossed Red Pill ---------- */
+.close-btn {
+  background: linear-gradient(160deg, #e05050 0%, #c03030 50%, #a02020 100%);
+  border: 1px solid #801010;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  transition: all 0.1s;
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.35) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    0 3px 0 #601010,
+    0 4px 8px rgba(0,0,0,0.5);
+}
+
+.close-btn:hover {
+  background: linear-gradient(160deg, #f06060 0%, #d04040 50%, #b03030 100%);
+}
+
+.close-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.3) inset,
+    0 1px 0 #601010,
+    0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* ---------- Messages Area — Paper / Parchment ---------- */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  /* Aged parchment paper */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(180, 140, 60, 0.12) 27px,
+      rgba(180, 140, 60, 0.12) 28px
+    ),
+    linear-gradient(160deg,
+      #f5e6c8 0%,
+      #edddb0 30%,
+      #e8d5a0 60%,
+      #f0dfa8 100%
+    );
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.15), inset 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+/* Custom scrollbar — leather strap style */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-messages::-webkit-scrollbar-track {
+  background: #c4a050;
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b6010, #5a3800);
+  border-radius: 4px;
+  border: 1px solid #3a2000;
+}
+
+/* ---------- Chat Bubbles ---------- */
+.chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  font-family: 'Merriweather', Georgia, serif;
+  position: relative;
+}
+
+/* USER bubble — carved blue soapstone */
+.chat-bubble.user {
+  align-self: flex-end;
+  color: #fff8f0;
+  border-bottom-right-radius: 4px;
+
+  background: linear-gradient(145deg, #4a6fa5 0%, #2c4e80 50%, #1e3860 100%);
+  border: 1px solid #1a2e50;
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.2) inset,
+    0 -1px 0 rgba(0,0,0,0.3) inset,
+    0 3px 0 #0e1e38,
+    0 4px 12px rgba(0,0,0,0.35),
+    0 1px 3px rgba(0,0,0,0.2);
+
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.chat-bubble.user::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 4px; right: 4px;
+  height: 40%;
+  border-radius: 12px 12px 50% 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.18), transparent);
+  pointer-events: none;
+}
+
+/* ASSISTANT bubble — stamped cream notecard */
+.chat-bubble.model {
+  align-self: flex-start;
+  color: #2c1a0e;
+  border-bottom-left-radius: 4px;
+
+  background: linear-gradient(145deg, #fdf6e3 0%, #f5e8c0 60%, #eddba0 100%);
+  border: 1px solid #c4a050;
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 -1px 0 rgba(0,0,0,0.15) inset,
+    0 3px 0 #a07830,
+    0 4px 12px rgba(0,0,0,0.2),
+    0 1px 3px rgba(0,0,0,0.15);
+
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.chat-bubble.model::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 4px; right: 4px;
+  height: 40%;
+  border-radius: 12px 12px 50% 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  pointer-events: none;
+}
+
+.chat-bubble.typing {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ---------- Input Row — Recessed Panel ---------- */
+.chat-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  flex-shrink: 0;
+
+  background: linear-gradient(180deg, #2a2a2a 0%, #222 100%);
+  border-top: 2px solid #111;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.4) inset;
+}
+
+/* ---------- Text Input — Debossed Slot ---------- */
+.chat-input-row input[type="text"] {
+  flex: 1;
+  padding: 9px 13px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-family: 'Merriweather', Georgia, serif;
+  color: #f0d080;
+  caret-color: #f0d080;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);
+  border: 1px solid #0a0a0a;
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.6) inset,
+    0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 1px rgba(180, 140, 60, 0.15);
+
+  transition: box-shadow 0.2s ease;
+}
+
+.chat-input-row input[type="text"]::placeholder {
+  color: rgba(180, 140, 60, 0.4);
+  font-style: italic;
+}
+
+.chat-input-row input[type="text"]:focus {
+  outline: none;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.6) inset,
+    0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 2px rgba(200, 160, 60, 0.5),
+    0 0 10px rgba(200, 160, 60, 0.2);
+}
+
+/* ---------- Mic & Send Buttons — Stamped Metal Keys ---------- */
+.mic-btn,
+.send-btn {
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+/* MIC — gunmetal */
+.mic-btn {
+  background: linear-gradient(160deg, #555 0%, #3a3a3a 50%, #2a2a2a 100%);
+  border: 1px solid #1a1a1a;
+  color: #ccc;
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.15) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 3px 0 #111,
+    0 4px 8px rgba(0,0,0,0.5);
+}
+
+.mic-btn:hover {
+  background: linear-gradient(160deg, #666 0%, #484848 50%, #383838 100%);
+}
+
+.mic-btn:active,
+.send-btn:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.4) inset,
+    0 1px 0 #111,
+    0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* MIC listening — glowing red */
+.mic-btn.listening {
+  background: linear-gradient(160deg, #e05050 0%, #c03030 50%, #a02020 100%);
+  border-color: #801010;
+  color: white;
+  animation: pulse-mic 1s infinite;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.25) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    0 3px 0 #601010,
+    0 0 16px rgba(220, 38, 38, 0.6);
+}
+
+@keyframes pulse-mic {
+  0%   { box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 3px 0 #601010, 0 0 0 0 rgba(220,38,38,0.7); }
+  70%  { box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 3px 0 #601010, 0 0 0 10px rgba(220,38,38,0); }
+  100% { box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 3px 0 #601010, 0 0 0 0 rgba(220,38,38,0); }
+}
+
+/* SEND — golden brass */
+.send-btn {
+  background: linear-gradient(160deg,
+    #d4a030 0%,
+    #c08820 40%,
+    #a06810 70%,
+    #8b5800 100%
+  );
+  border: 1px solid #5a3800;
+  color: #fff8e8;
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 -1px 0 rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.35) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    0 3px 0 #3a2000,
+    0 4px 12px rgba(0,0,0,0.5);
+}
+
+.send-btn:hover {
+  background: linear-gradient(160deg,
+    #e0b040 0%,
+    #cc9830 40%,
+    #b07820 70%,
+    #9a6810 100%
+  );
+}
+
+/* Disabled state */
+.mic-btn:disabled,
+.send-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Voice Toggle — Toggle Switch ---------- */
+.voice-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #8a7050;
+  padding: 8px 14px 12px;
+  font-family: 'Merriweather', Georgia, serif;
+  font-style: italic;
+
+  background: linear-gradient(180deg, #1e1e1e 0%, #1a1a1a 100%);
+  flex-shrink: 0;
+  border-top: 1px solid #111;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.voice-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 28px;
+  height: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+
+  background: linear-gradient(180deg, #1a1a1a 0%, #222 100%);
+  border: 1px solid #0a0a0a;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.5) inset,
+    0 1px 0 rgba(255,255,255,0.06);
+}
+
+.voice-toggle input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #555 0%, #333 100%);
+  border: 1px solid #222;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1) inset;
+  transition: left 0.2s ease, background 0.2s ease;
+}
+
+.voice-toggle input[type="checkbox"]:checked {
+  background: linear-gradient(180deg, #a07020 0%, #c09030 100%);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.3) inset,
+    0 1px 0 rgba(255,255,255,0.1);
+}
+
+.voice-toggle input[type="checkbox"]:checked::after {
+  left: 14px;
+  background: linear-gradient(145deg, #f0d080 0%, #c8a840 100%);
+  border-color: #8b6010;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 6px rgba(200, 160, 60, 0.4);
+}
